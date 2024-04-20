@@ -1,0 +1,453 @@
+:root {
+    --black: #030303;
+    --gray-dark: #ADADAD;
+    --red: #EB3163;
+    --yellow: #F1FFA7;
+    --white: #fff;
+    --font-sans-serif: "Poppins", "Segoe UI",  "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-family: "Segoe UI",  "Roboto", "Ubuntu", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    color: var(--black);
+    line-height: 1.666;
+    max-width: 100%;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans-serif);
+    font-weight: 400;
+    color: var(--black);
+    line-height: 1.1;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4 {
+    font-size: 1.1rem;
+  }
+  
+  a {
+    color: var(--black);
+  }
+
+  a:hover {
+    color: var(--red);
+  }
+  
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+
+  
+  /***
+  * Utilities
+  */
+  
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+  }
+  
+  .container {
+    padding: 0rem;
+  }
+  
+  /**
+  * design system component on the components.html page
+  **/
+  .component {
+    margin-bottom: 6rem;
+    position: relative;
+  }
+  
+ 
+  .component__img {
+    border: 1px solid #ccc;
+    margin: 0;
+    overflow-x: auto;
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .component__name {
+    font-family: monospace;
+    font-size: 1.25rem;
+    font-weight: normal;
+    background: var(--gray-light);
+    padding: 0.25rem;
+    margin: 0;
+  }
+  .component__code {
+    border: 1px solid #ccc;
+    background: #fff;
+    margin:0;
+    position: relative;
+  }
+
+  .component__code p {
+    background: #fff;
+    position: relative;
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
+  
+  .component__code:before,
+  .component__img:before {
+    content: "CODE";
+    display: block;
+    padding: 0.25rem;
+    line-height: 1;
+    font-family: monospace;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    background: var(--gray-light);
+    color: var(--gray-dark);
+  }
+  .component__img:before {
+    content: "IMG";
+  }
+  
+ 
+  
+  /*************************
+  * ATOMS
+  **/
+  
+  /**
+  * Wolff Olins Wordmark
+  */
+  .wordmark {
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    line-height: 0.85;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+  }
+
+  .wordmark__img {
+    width: 150px;
+  }
+  
+  /**
+  * Section Heading
+  */
+  .section-heading {
+    font-size: 2rem;
+    font-weight: 400;
+    font-style: italic;
+    font-family: var(--font-sans-serif2);
+    text-align: center;
+    line-height: 1.3em;
+  }
+  
+  /**
+  * Action Link
+  **/
+  .action-link {
+    --arrow-width: 3.25rem;
+    display: flex;
+    align-items: center;
+    font-family: var(--font-sans-serif);
+    font-size: 1.25rem;
+    color: var(--black);
+    background-color: var(--yellow);
+  }
+
+  .action-link:before {
+    content: "";
+    transform-origin: center left;
+    transition: all 0.3s;
+    display: block;
+    width: var(--arrow-width);
+    height: 1.5rem;
+    background: url("../img/arrow.svg") no-repeat left center;
+  }
+  
+  /***********
+  * MOLECULES & ORGANISMS
+  * I find the distinction somewhat arbitrary and confusion, so basically
+  * these are things made up of atoms
+  */
+  
+  /**
+
+  
+  /**
+  * .main-nav
+  */
+  .nav-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 7vh 2vh;
+  }
+  
+  
+    .nav-top li {
+        list-style: none;
+        margin: 0;
+        font-family: sans-serif;
+        font-size: 0.95em;
+        font-weight: 300;
+    }
+
+    .nav-top a {
+        text-decoration: none;
+    }
+    
+    .nav-top__option {
+        text-transform: uppercase;
+    }
+  
+  /**
+  * .cover-section
+  */
+  .cover-section {
+    position: relative;
+    height: 50vh;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  @media (min-width: 40rem) {
+    .cover-section {
+      height: 100vh;
+    }
+  }
+  
+  .cover-section__feature-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .cover-section__feature-media video,
+  .cover-section__feature-media img {
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cover-section__contents {
+    z-index: 10;
+  }
+  .cover-section__contents a {
+    text-decoration: none;
+    color: var(--black);
+  }
+  .cover-section__contents > a > * {
+    margin: 1rem 0;
+  }
+  
+  .cover-section__contents:hover .action-link:before {
+    transform: scaleX(1.5);
+    width: calc(var(--arrow-width) * 1.5);
+  }
+  
+  .cover-section--light,
+  .cover-section--light .section-heading,
+  .cover-section--light .action-link,
+  .cover-section--light a {
+    color: var(--white);
+  }
+  
+  .cover-section--light .action-link:before {
+    background-image: url("../img/arrow--light.svg");
+  }
+
+  .cover img {
+    max-width: 100%;
+  }
+  
+  .cover-section--hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: var(--black) solid 1px;
+  }
+
+
+  .cover-section__hero-media {
+    max-width: 650px;
+    justify-self: center;
+  }
+
+  .cover-section__contents {
+    border: var(--black) solid 1px;
+    background: var(--white);
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 1em;
+
+  }
+
+  .cover-section__contents h2 {
+    font-size: 1.6em;
+  }
+
+
+  .cover-section__contents img {
+    display: inline-block;
+    width: 65px;
+    position: relative;
+    top: 0.4vh;
+  }
+
+  .cover-section__contents p a {
+    text-decoration: underline;
+  }
+
+  .cover-section__contents p {
+    font-size: 1em;
+  }
+
+  .sizes {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: 0;
+    padding-inline-start: 0px;
+  }
+  
+  
+  .sizes li {
+    list-style: none;
+    font-family: sans-serif;
+    font-size: 0.95em;
+    font-weight: 300;
+    padding-right: 1vh;
+  }
+
+  .shoppay__button {
+    background-color: rgb(101, 110, 230);
+    color: var(--white);
+  }
+
+  button {
+    padding: 1vh 0vh;
+    margin-right: 23vh;
+  }
+
+  .payment_options--link {
+    background-color: white;
+    border: none;
+    font-size: 0.95em;
+  }
+
+  
+  /**
+  * .page-footer
+  */
+  .page-footer {
+    font-family: var(--font-sans-serif);
+    padding: 2rem;
+    line-height: 1.2;
+  }
+  .page-footer a {
+    color: var(--black);
+    text-decoration: none;
+  }
+  .page-footer .icon--circle {
+    color: var(--white);
+  }
+  .page-footer__heading {
+    margin: 0;
+    font-size: 1rem;
+  }
+  @media (min-width: 50rem) {
+    .page-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .page-footer__links {
+      display: flex;
+      align-items: center;
+    }
+    .page-footer__links > * {
+      margin: 0 1rem 0 0;
+    }
+  }
+  
+  /**
+  * .social-list
+  */
+  .social-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+  }
+  .social-list > * {
+    margin-right: 0.25rem;
+  }
+  .social-list > :last-child {
+    margin-right: 0;
+  }
+  
+  /**
+  * .social-list__item
+  */
+  .icon--circle {
+    background: var(--black);
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s;
+  }
+  .icon--circle,
+  .icon--circle a {
+    color: var(--white);
+    text-decoration: none;
+  }
+  .icon--circle:hover {
+    background: var(--yellow);
+  }
+  .icon--circle:hover,
+  .icon--circle:hover a {
+    color: var(--black);
+  }
+  
