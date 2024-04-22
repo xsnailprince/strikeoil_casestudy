@@ -106,7 +106,7 @@
     font-size: 1.25rem;
     font-weight: normal;
     background: var(--gray-light);
-    padding: 0.25rem;
+    padding: 2em 2em;
     margin: 0;
   }
   .component__code {
@@ -117,7 +117,6 @@
   }
 
   .component__code p {
-    background: #fff;
     position: relative;
     font-size: 1.2em;
     line-height: 1.4em;
@@ -146,10 +145,6 @@
   /*************************
   * ATOMS
   **/
-  
-  /**
-  * Wolff Olins Wordmark
-  */
   .wordmark {
     margin: 0;
     display: inline-flex;
@@ -177,29 +172,12 @@
     line-height: 1.3em;
   }
   
-  /**
-  * Action Link
-  **/
-  .action-link {
-    --arrow-width: 3.25rem;
-    display: flex;
-    align-items: center;
-    font-family: var(--font-sans-serif);
-    font-size: 1.25rem;
-    color: var(--black);
-    background-color: var(--yellow);
+
+  .body-copy {
+    padding: 2vh 2vh;
+    padding-right: 70vh;
   }
 
-  .action-link:before {
-    content: "";
-    transform-origin: center left;
-    transition: all 0.3s;
-    display: block;
-    width: var(--arrow-width);
-    height: 1.5rem;
-    background: url("../img/arrow.svg") no-repeat left center;
-  }
-  
   /***********
   * MOLECULES & ORGANISMS
   * I find the distinction somewhat arbitrary and confusion, so basically
@@ -228,6 +206,7 @@
         font-family: sans-serif;
         font-size: 0.95em;
         font-weight: 300;
+        padding: 0 5vh;
     }
 
     .nav-top a {
@@ -358,6 +337,10 @@
     padding-right: 1vh;
   }
 
+  .sizes li:hover {
+    text-decoration: underline;
+  }
+
   .shoppay__button {
     background-color: rgb(101, 110, 230);
     color: var(--white);
@@ -378,76 +361,80 @@
   /**
   * .page-footer
   */
-  .page-footer {
-    font-family: var(--font-sans-serif);
-    padding: 2rem;
-    line-height: 1.2;
-  }
-  .page-footer a {
-    color: var(--black);
-    text-decoration: none;
-  }
-  .page-footer .icon--circle {
-    color: var(--white);
-  }
-  .page-footer__heading {
-    margin: 0;
-    font-size: 1rem;
-  }
-  @media (min-width: 50rem) {
-    .page-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .page-footer__links {
-      display: flex;
-      align-items: center;
-    }
-    .page-footer__links > * {
-      margin: 0 1rem 0 0;
-    }
-  }
-  
-  /**
-  * .social-list
-  */
-  .social-list {
-    margin: 0;
-    padding: 0;
-    display: flex;
+
+  footer li {
     list-style: none;
   }
-  .social-list > * {
-    margin-right: 0.25rem;
+
+  footer ul {
+    padding-inline-start: 0px;
   }
-  .social-list > :last-child {
-    margin-right: 0;
+
+  .page-footer {
+    font-family: var(--font-sans-serif);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  
-  /**
-  * .social-list__item
-  */
-  .icon--circle {
-    background: var(--black);
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
+
+  .footer__column1 {
+    border: #030303 1px solid;
+    border-right: 0;
+    border-bottom: 0;
+    text-align: center;
+    padding: 0px;
+  }
+
+  .footer__column2 {
+    border: var(--black) 1px solid;
+    border-right: 0;
+    border-bottom: 0;
+    text-align: center;
+  }
+
+  .footer__column3 {
+    border: var(--black) 1px solid;
+    border-bottom: 0;
+    text-align: center;
+  }
+
+  .footer__column4 {
+    border: var(--black) 1px solid;
+    grid-column: 1 / -1;
     display: flex;
+    justify-content: space-between;
+    background-color: #F1FFA7;
     align-items: center;
-    justify-content: center;
-    transition: all 0.25s;
+    font-size: smaller;
+    padding: 2vh 2vh;
   }
-  .icon--circle,
-  .icon--circle a {
-    color: var(--white);
-    text-decoration: none;
+
+  .footer__column5 {
+    border: var(--black) 1px solid;
+    border-bottom: 0;
+    border-top: 0;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    font-size: smaller;
+    padding: 2vh 2vh;
+    padding-right: 50vh;
   }
-  .icon--circle:hover {
-    background: var(--yellow);
+
+  .footer__column6 {
+    border: var(--black) 1px solid;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    font-size: 8pt;
+    padding: 0vh 2vh;
+    align-items: center;
   }
-  .icon--circle:hover,
-  .icon--circle:hover a {
-    color: var(--black);
+
+  .paymentaccepted {
+    display: flex;
   }
-  
+
+  .paymentaccepted img {
+    width: 40px;
+  }
+
